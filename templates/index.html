@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TideWise - Tide Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h1>🌊 TideWise</h1>
+        <p class="subtitle">Coastal Tide Level Prediction & Safety Advisory System</p>
+      </div>
+
+      <!-- Compact 2-column form -->
+      <form method="POST" class="form grid">
+        <div class="field">
+          <label>Month</label>
+          <select name="month" required>
+            {% for m in range(1,13) %}
+              <option value="{{m}}" {% if form_values.month == m|string %}selected{% endif %}>{{m}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Time of Day</label>
+          <select name="time_block" required>
+            {% for t in time_blocks %}
+              <option value="{{t}}" {% if form_values.time_block == t %}selected{% endif %}>{{t}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field full">
+          <label>Moon Phase</label>
+          <select name="moon_phase" required>
+            {% for p in moon_phases %}
+              <option value="{{p}}" {% if form_values.moon_phase == p %}selected{% endif %}>{{p}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Wind Speed (km/h)</label>
+          <input type="number" step="0.1" min="0" name="wind_speed" placeholder="e.g., 18"
+                 value="{{ form_values.wind_speed }}" required>
+        </div>
+
+        <div class="field">
+          <label>Air Pressure (hPa)</label>
+          <input type="number" step="0.1" min="900" name="pressure" placeholder="e.g., 1008"
+                 value="{{ form_values.pressure }}" required>
+        </div>
+
+        <div class="field full">
+          <label>Temperature (°C)</label>
+          <input type="number" step="0.1" min="-5" name="temperature" placeholder="e.g., 28"
+                 value="{{ form_values.temperature }}" required>
+        </div>
+
+        <div class="field full">
+          <button class="btn" type="submit">Predict Tide Level</button>
+        </div>
+      </form>
+
+      {% if prediction %}
+        <!-- FULL WIDTH result boxes so they fit nicely -->
+        <div class="result-box full">
+          <div class="result-title">Predicted Tide Level</div>
+          <div class="badge {{ prediction|lower }}">{{ prediction }}</div>
+          {% if confidence %}
+            <div class="confidence">Model Confidence: {{ confidence }}%</div>
+          {% endif %}
+        </div>
+
+        <div class="advice-box full">
+          <div class="advice-title">⚠️ {{ advisory.title }}</div>
+          <p class="advice-tip">{{ advisory.tip }}</p>
+
+          <div class="two-cols">
+            <div>
+              <div class="list-title">✅ Do</div>
+              <ul>
+                {% for item in advisory.do %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <div class="list-title">❌ Avoid</div>
+              <ul>
+                {% for item in advisory.avoid %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="footer">Machine Learning Mini Project (Flask)</div>
+    </div>
+  </div>
+
+</body>
+</html>
