@@ -31,15 +31,19 @@ A Machine Learning-based Flask web application that predicts coastal tide levels
 
 ### Home Page
 
-![Home](screenshots/home.png)
+![Home](scre<img width="599" height="594" alt="Home" src="https://github.com/user-attachments/assets/1426d8d7-0711-4443-bcfb-90be782d470b" />
+enshots/home.png)
 
 ### Prediction Result
 
-![Prediction](screenshots/prediction.png)
+![Prediction](screenshots/prediction.png)<img width="561" height="603" alt="PR" src="https://github.com/user-attachments/assets/3cd74b0a-7732-4915-84d5-35b6af2b909a" />
+
 
 ### Safety Advisory
 
-![Advisory](screenshots/advisory.png)
+![Advisory](screenshots/advisory.png)<img width="550" height="600" alt="SA" src="https://github.com/user-attachments/assets/0dfe392a-269e-4b88-b72a-909758e9f8c0" />
+<img width="551" height="601" alt="SA2" src="https://github.com/user-attachments/assets/731e0a57-0bdf-4a18-88bd-f30a5ce5858d" />
+
 
 ## Future Improvements
 
