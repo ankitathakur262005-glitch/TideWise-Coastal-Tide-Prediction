@@ -30,20 +30,14 @@ A Machine Learning-based Flask web application that predicts coastal tide levels
 ## Project Screenshots
 
 ### Home Page
-
-![Home](scre<img width="599" height="594" alt="Home" src="https://github.com/user-attachments/assets/1426d8d7-0711-4443-bcfb-90be782d470b" />
-enshots/home.png)
+<img width="599" height="594" alt="Home" src="https://github.com/user-attachments/assets/f5f016b8-fd7b-42c5-8278-f2aff9179c2d" />
 
 ### Prediction Result
-
-![Prediction](screenshots/prediction.png)<img width="561" height="603" alt="PR" src="https://github.com/user-attachments/assets/3cd74b0a-7732-4915-84d5-35b6af2b909a" />
-
+<img width="561" height="603" alt="PR" src="https://github.com/user-attachments/assets/ca0f46ea-3523-4923-a08f-6ccb96810e08" />
 
 ### Safety Advisory
-
-![Advisory](screenshots/advisory.png)<img width="550" height="600" alt="SA" src="https://github.com/user-attachments/assets/0dfe392a-269e-4b88-b72a-909758e9f8c0" />
-<img width="551" height="601" alt="SA2" src="https://github.com/user-attachments/assets/731e0a57-0bdf-4a18-88bd-f30a5ce5858d" />
-
+<img width="550" height="600" alt="SA" src="https://github.com/user-attachments/assets/4c5a427a-21da-4b4b-b4b8-cee8ac7d988b" />
+<img width="551" height="601" alt="SA2" src="https://github.com/user-attachments/assets/7dc78537-7439-4023-88f7-0bffbbc4aaba" />
 
 ## Future Improvements
 
